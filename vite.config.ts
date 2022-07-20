@@ -7,6 +7,8 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
+import viteCompression from 'vite-plugin-compression'
+
 import {
   createStyleImportPlugin,
   ElementPlusResolve
@@ -41,6 +43,13 @@ export default defineConfig({
           }
         }
       ]
+    }),
+    viteCompression({
+      verbose: true,
+      disable: false,
+      threshold: 10240,
+      algorithm: 'gzip',
+      ext: '.gz'
     })
   ],
   resolve: {
@@ -62,6 +71,12 @@ export default defineConfig({
     }
   },
   build: {
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
     rollupOptions: {
       output: {
         manualChunks (id) {

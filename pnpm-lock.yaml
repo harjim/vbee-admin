@@ -32,6 +32,7 @@ specifiers:
   unplugin-auto-import: ^0.9.3
   unplugin-vue-components: ^0.21.1
   vite: ^3.0.0
+  vite-plugin-compression: ^0.5.1
   vite-plugin-style-import: ^2.0.0
   vitest: ^0.18.1
   vue: ^3.2.37
@@ -74,6 +75,7 @@ devDependencies:
   unplugin-auto-import: registry.npmmirror.com/unplugin-auto-import/0.9.3_vite@3.0.2
   unplugin-vue-components: registry.npmmirror.com/unplugin-vue-components/0.21.1_vite@3.0.2+vue@3.2.37
   vite: registry.npmmirror.com/vite/3.0.2_sass@1.53.0
+  vite-plugin-compression: registry.npmmirror.com/vite-plugin-compression/0.5.1_vite@3.0.2
   vite-plugin-style-import: registry.npmmirror.com/vite-plugin-style-import/2.0.0_vite@3.0.2
   vitest: registry.npmmirror.com/vitest/0.18.1_x7bjkqki3nci6prjtndxrcy4y4
   vue-tsc: registry.npmmirror.com/vue-tsc/0.38.9_typescript@4.7.4
@@ -5811,6 +5813,22 @@ packages:
     dependencies:
       spdx-correct: registry.npmmirror.com/spdx-correct/3.1.1
       spdx-expression-parse: registry.npmmirror.com/spdx-expression-parse/3.0.1
+    dev: true
+
+  registry.npmmirror.com/vite-plugin-compression/0.5.1_vite@3.0.2:
+    resolution: {integrity: sha512-5QJKBDc+gNYVqL/skgFAP81Yuzo9R+EAf19d+EtsMF/i8kFUpNi3J/H01QD3Oo8zBQn+NzoCIFkpPLynoOzaJg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite-plugin-compression/-/vite-plugin-compression-0.5.1.tgz}
+    id: registry.npmmirror.com/vite-plugin-compression/0.5.1
+    name: vite-plugin-compression
+    version: 0.5.1
+    peerDependencies:
+      vite: '>=2.0.0'
+    dependencies:
+      chalk: registry.npmmirror.com/chalk/4.1.2
+      debug: registry.npmmirror.com/debug/4.3.4
+      fs-extra: registry.npmmirror.com/fs-extra/10.1.0
+      vite: registry.npmmirror.com/vite/3.0.2_sass@1.53.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   registry.npmmirror.com/vite-plugin-style-import/2.0.0_vite@3.0.2:
