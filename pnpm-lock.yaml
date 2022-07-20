@@ -8,6 +8,7 @@ specifiers:
   dayjs: ^1.11.4
   element-plus: ^2.2.9
   pinia: ^2.0.16
+  sass: ^1.53.0
   typescript: ^4.6.4
   unplugin-auto-import: ^0.9.3
   unplugin-vue-components: ^0.21.1
@@ -29,10 +30,11 @@ devDependencies:
   '@types/node': registry.npmmirror.com/@types/node/18.0.6
   '@vitejs/plugin-vue': registry.npmmirror.com/@vitejs/plugin-vue/3.0.1_vite@3.0.2+vue@3.2.37
   consola: registry.npmmirror.com/consola/2.15.3
+  sass: registry.npmmirror.com/sass/1.53.0
   typescript: registry.npmmirror.com/typescript/4.7.4
   unplugin-auto-import: registry.npmmirror.com/unplugin-auto-import/0.9.3_vite@3.0.2
   unplugin-vue-components: registry.npmmirror.com/unplugin-vue-components/0.21.1_vite@3.0.2+vue@3.2.37
-  vite: registry.npmmirror.com/vite/3.0.2
+  vite: registry.npmmirror.com/vite/3.0.2_sass@1.53.0
   vite-plugin-style-import: registry.npmmirror.com/vite-plugin-style-import/2.0.0_vite@3.0.2
   vue-tsc: registry.npmmirror.com/vue-tsc/0.38.9_typescript@4.7.4
 
@@ -179,7 +181,7 @@ packages:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: registry.npmmirror.com/vite/3.0.2
+      vite: registry.npmmirror.com/vite/3.0.2_sass@1.53.0
       vue: registry.npmmirror.com/vue/3.2.37
     dev: true
 
@@ -979,6 +981,12 @@ packages:
       tslib: registry.npmmirror.com/tslib/2.4.0
     dev: true
 
+  registry.npmmirror.com/immutable/4.1.0:
+    resolution: {integrity: sha512-oNkuqVTA8jqG1Q6c+UglTOD1xhC1BtjKI7XkCXRkZHrN5m18/XsnUp8Q89GkQO/z+0WjonSvl0FLhDYftp46nQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/immutable/-/immutable-4.1.0.tgz}
+    name: immutable
+    version: 4.1.0
+    dev: true
+
   registry.npmmirror.com/is-binary-path/2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/is-binary-path/-/is-binary-path-2.1.0.tgz}
     name: is-binary-path
@@ -1334,6 +1342,18 @@ packages:
       queue-microtask: registry.npmmirror.com/queue-microtask/1.2.3
     dev: true
 
+  registry.npmmirror.com/sass/1.53.0:
+    resolution: {integrity: sha512-zb/oMirbKhUgRQ0/GFz8TSAwRq2IlR29vOUJZOx0l8sV+CkHUfHa4u5nqrG+1VceZp7Jfj59SVW9ogdhTvJDcQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sass/-/sass-1.53.0.tgz}
+    name: sass
+    version: 1.53.0
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: registry.npmmirror.com/chokidar/3.5.3
+      immutable: registry.npmmirror.com/immutable/4.1.0
+      source-map-js: registry.npmmirror.com/source-map-js/1.0.2
+    dev: true
+
   registry.npmmirror.com/scule/0.2.1:
     resolution: {integrity: sha512-M9gnWtn3J0W+UhJOHmBxBTwv8mZCan5i1Himp60t6vvZcor0wr+IM0URKmIglsWJ7bRujNAVVN77fp+uZaWoKg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/scule/-/scule-0.2.1.tgz}
     name: scule
@@ -1528,7 +1548,7 @@ packages:
     dependencies:
       acorn: registry.npmmirror.com/acorn/8.7.1
       chokidar: registry.npmmirror.com/chokidar/3.5.3
-      vite: registry.npmmirror.com/vite/3.0.2
+      vite: registry.npmmirror.com/vite/3.0.2_sass@1.53.0
       webpack-sources: registry.npmmirror.com/webpack-sources/3.2.3
       webpack-virtual-modules: registry.npmmirror.com/webpack-virtual-modules/0.4.4
     dev: true
@@ -1564,11 +1584,12 @@ packages:
       fs-extra: registry.npmmirror.com/fs-extra/10.1.0
       magic-string: registry.npmmirror.com/magic-string/0.25.9
       pathe: registry.npmmirror.com/pathe/0.2.0
-      vite: registry.npmmirror.com/vite/3.0.2
+      vite: registry.npmmirror.com/vite/3.0.2_sass@1.53.0
     dev: true
 
-  registry.npmmirror.com/vite/3.0.2:
+  registry.npmmirror.com/vite/3.0.2_sass@1.53.0:
     resolution: {integrity: sha512-TAqydxW/w0U5AoL5AsD9DApTvGb2iNbGs3sN4u2VdT1GFkQVUfgUldt+t08TZgi23uIauh1TUOQJALduo9GXqw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/vite/-/vite-3.0.2.tgz}
+    id: registry.npmmirror.com/vite/3.0.2
     name: vite
     version: 3.0.2
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -1592,6 +1613,7 @@ packages:
       postcss: registry.npmmirror.com/postcss/8.4.14
       resolve: registry.npmmirror.com/resolve/1.22.1
       rollup: registry.npmmirror.com/rollup/2.77.0
+      sass: registry.npmmirror.com/sass/1.53.0
     optionalDependencies:
       fsevents: registry.npmmirror.com/fsevents/2.3.2
     dev: true
