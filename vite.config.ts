@@ -22,5 +22,17 @@ export default defineConfig({
         rewrite: path => path.replace('/api/', '/')
       }
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // 将 pinia 的全局库实例打包进 vendor，避免和页面一起打包造成资源重复引入
+          if (id.includes(resolve(__dirname, '/src/store/index.ts'))) {
+            return 'vendor'
+          }
+        }
+      }
+    }
   }
 })
