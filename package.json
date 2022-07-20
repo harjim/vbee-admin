@@ -18,6 +18,7 @@
     "axios": "^0.27.2",
     "dayjs": "^1.11.4",
     "element-plus": "^2.2.9",
+    "nprogress": "^0.2.0",
     "pinia": "^2.0.16",
     "vue": "^3.2.37",
     "vue-router": "4"
@@ -26,6 +27,7 @@
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@types/node": "^18.0.6",
+    "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
     "@vitejs/plugin-vue": "^3.0.0",
