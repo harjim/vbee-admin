@@ -1,3 +1,6 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -17,7 +20,7 @@ export default defineConfig({
       imports: ['vue', 'pinia', 'vue-router'],
       resolvers: [ElementPlusResolver()],
       eslintrc: {
-        enabled: true,
+        enabled: false,
         filepath: './.eslintrc-auto-import.json',
         globalsPropValue: true
       }
@@ -69,5 +72,10 @@ export default defineConfig({
         }
       }
     }
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    reporter: ['text', 'json', 'html']
   }
 })
