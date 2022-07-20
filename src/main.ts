@@ -1,3 +1,4 @@
+import dayjs from '/@/common/dayjs'
 import { registerStore } from '/@/store'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'
@@ -7,7 +8,7 @@ import router from './router/index'
 
 const app = createApp(App)
 
-app.use(router).use(createPinia())
+app.use(router).use(createPinia()).use(dayjs)
 
 registerStore()
 
