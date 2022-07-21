@@ -15,6 +15,7 @@ specifiers:
   consola: ^2.15.3
   cz-conventional-changelog: ^3.3.0
   dayjs: ^1.11.4
+  dotenv: ^16.0.1
   element-plus: ^2.2.9
   eslint: ^8.0.1
   eslint-config-standard: ^17.0.0
@@ -63,6 +64,7 @@ devDependencies:
   commitizen: registry.npmmirror.com/commitizen/4.2.5
   consola: registry.npmmirror.com/consola/2.15.3
   cz-conventional-changelog: registry.npmmirror.com/cz-conventional-changelog/3.3.0
+  dotenv: registry.npmmirror.com/dotenv/16.0.1
   eslint: registry.npmmirror.com/eslint/8.20.0
   eslint-config-standard: registry.npmmirror.com/eslint-config-standard/17.0.0_aabay5xq26dqolh67bnodxi5n4
   eslint-plugin-import: registry.npmmirror.com/eslint-plugin-import/2.26.0_xconv27bia2733zao6ipggqv2i
@@ -2597,6 +2599,13 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-obj: registry.npmmirror.com/is-obj/2.0.0
+    dev: true
+
+  registry.npmmirror.com/dotenv/16.0.1:
+    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/dotenv/-/dotenv-16.0.1.tgz}
+    name: dotenv
+    version: 16.0.1
+    engines: {node: '>=12'}
     dev: true
 
   registry.npmmirror.com/download/6.2.5:

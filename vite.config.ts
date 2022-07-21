@@ -1,106 +1,41 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import vue from '@vitejs/plugin-vue'
+import { loadEnv } from '/@/utils/viteHelp'
+import vitePlugin from '/@/utils/vitePlugin'
 import { resolve } from 'path'
-import AutoImport from 'unplugin-auto-import/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import Components from 'unplugin-vue-components/vite'
-import { defineConfig } from 'vite'
-import viteCompression from 'vite-plugin-compression'
-import viteImagemin from 'vite-plugin-imagemin'
+import { ConfigEnv, UserConfig } from 'vite'
 
-import {
-  createStyleImportPlugin,
-  ElementPlusResolve
-} from 'vite-plugin-style-import'
+const viteConfig = ({ mode }: ConfigEnv): UserConfig => {
+  const {
+    VITE_PORT,
+    VITE_OPEN,
+    VITE_BASE_PATH,
+    VITE_OUT_DIR,
+    VITE_PROXY_URL
+  } = loadEnv(mode)
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [
-    vue(),
-    AutoImport({
-      imports: ['vue', 'pinia', 'vue-router'],
-      resolvers: [ElementPlusResolver()],
-      eslintrc: {
-        enabled: false,
-        filepath: './.eslintrc-auto-import.json',
-        globalsPropValue: true
-      }
-    }),
-    Components({
-      dirs: ['src/components'],
-      extensions: ['vue'],
-      resolvers: [ElementPlusResolver()]
-    }),
-    createStyleImportPlugin({
-      resolves: [ElementPlusResolve()],
-      libs: [
-        {
-          libraryName: 'element-plus',
-          esModule: true,
-          resolveStyle: name => {
-            return `element-plus/theme-chalk/${name}.css`
-          }
-        }
-      ]
-    }),
-    viteImagemin({
-      gifsicle: {
-        optimizationLevel: 7,
-        interlaced: false
-      },
-      optipng: {
-        optimizationLevel: 7
-      },
-      mozjpeg: {
-        quality: 20
-      },
-      pngquant: {
-        quality: [0.8, 0.9],
-        speed: 4
-      },
-      svgo: {
-        plugins: [
-          {
-            name: 'removeViewBox'
-          },
-          {
-            name: 'removeEmptyAttrs',
-            active: false
-          }
-        ]
-      }
-    }),
-    viteCompression({
-      verbose: true,
-      disable: false,
-      threshold: 10240,
-      algorithm: 'gzip',
-      ext: '.gz'
-    })
-  ],
-  resolve: {
-    alias: {
-      '/@': resolve(__dirname, 'src')
-    }
-  },
-  base: './',
-  server: {
-    port: 3000,
-    cors: true,
-    proxy: {
+  const alias = {
+    '/@': resolve(__dirname, 'src')
+  }
+
+  let proxy = {}
+  if (VITE_PROXY_URL) {
+    proxy = {
       '/api': {
-        target: 'http://127.0.0.1:3001',
+        target: VITE_PROXY_URL,
         changeOrigin: true,
         secure: false,
         rewrite: path => path.replace('/api/', '/')
       }
     }
-  },
-  build: {
-    outDir: 'dist',
+  }
+
+  const build = {
+    outDir: VITE_OUT_DIR,
+    sourcemap: false,
     chunkSizeWarningLimit: 1024,
+    emptyOutDir: true,
     minify: 'terser',
     terserOptions: {
       compress: {
@@ -123,10 +58,26 @@ export default defineConfig({
         }
       }
     }
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    reporters: ['text', 'json', 'html']
   }
-})
+
+  return {
+    plugins: vitePlugin,
+    root: process.cwd(),
+    resolve: { alias },
+    base: VITE_BASE_PATH,
+    server: {
+      host: '0.0.0.0',
+      port: VITE_PORT,
+      open: VITE_OPEN,
+      proxy
+    },
+    build,
+    test: {
+      globals: true,
+      environment: 'jsdom',
+      reporters: ['text', 'json', 'html']
+    }
+  }
+}
+
+export default viteConfig
