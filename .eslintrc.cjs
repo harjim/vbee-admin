@@ -25,6 +25,7 @@ module.exports = {
     'no-plusplus': [
       'off',
       { allowForLoopAfterthoughts: true }
-    ]
+    ],
+    'vue/multi-word-component-names': 'off'
   }
 }
