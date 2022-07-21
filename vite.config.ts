@@ -91,6 +91,6 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    reporter: ['text', 'json', 'html']
+    reporters: ['text', 'json', 'html']
   }
 })
