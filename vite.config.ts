@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import { loadEnv } from '/@/utils/viteHelp'
+import { isProd, loadEnv } from '/@/utils/viteHelp'
 import vitePlugin from '/@/utils/vitePlugin'
 import { resolve } from 'path'
 import { ConfigEnv, UserConfig } from 'vite'
@@ -16,7 +16,10 @@ const viteConfig = ({ mode }: ConfigEnv): UserConfig => {
   } = loadEnv(mode)
 
   const alias = {
-    '/@': resolve(__dirname, 'src')
+    '/@': resolve(__dirname, 'src'),
+    'vue-i18n': isProd(mode)
+      ? 'vue-i18n/dist/vue-i18n.cjs.prod.js'
+      : 'vue-i18n/dist/vue-i18n.cjs.js'
   }
 
   let proxy = {}
