@@ -33,4 +33,8 @@ onMounted(() => {
     width2point(screenWidth)
   }
 })
+
+onBeforeUnmount(() => {
+  window.onresize = null
+})
 </script>
