@@ -1,18 +1,10 @@
-import NotFound from '/@/views/404.vue'
+import basicRoute from '/@/router/routes/basicRoute'
 import NProgress from 'nprogress'
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: '/404',
-    name: '404',
-    component: NotFound
-  }
-]
+import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes: basicRoute
 })
 
 router.beforeEach((to, from, next) => {
