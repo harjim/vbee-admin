@@ -5,4 +5,8 @@ html {
     @apply h-screen w-screen overflow-hidden;
     background-color: var(--af-bg-color);
   }
+
+  .el-header {
+    @apply bg-white
+  }
 }
