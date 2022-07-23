@@ -1,12 +1,12 @@
 <template>
   <el-header class="flex-horizontal-center">
-    <DarkSwitch />
+    <HeaderIcons />
   </el-header>
 </template>
 
 <script lang="ts" setup>
 
-</script>
+import HeaderIcons from '/@/Layouts/components/HeaderIcons.vue'</script>
 
 <style scoped>
 

@@ -1,7 +1,7 @@
 <template>
   <template v-if="setting.size === 'small'">
     <el-icon
-      :size="24"
+      :size="setting.iconSize"
       class="cursor-pointer"
       @click="changeDarkOrLight"
     >
@@ -21,9 +21,15 @@
   </template>
 </template>
 
-<script lang="ts" setup>
+<script lang="tsx" setup>
 import appStore from '/@/store'
-import { Moon, Sunny } from '@element-plus/icons-vue'
+
+const Sunny = () => (
+  <i-material-symbols-sunny/>
+)
+const Moon = () => (
+  <i-material-symbols-bedtime-outline/>
+)
 
 const { setting } = storeToRefs(appStore.useGlobalSetting)
 

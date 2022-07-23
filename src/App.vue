@@ -11,7 +11,7 @@ const locale = getLocaleMessage(lang.value.defaultLang)
 <template>
   <el-config-provider
     :locale="locale"
-    :size="setting"
+    :size="setting.size"
   >
     <AppProvider>
       <router-view />

@@ -5,7 +5,8 @@ export const useGlobalSetting = defineStore('globalSetting', () => {
   const setting = reactive({
     isDark: false,
     point: '',
-    size: 'default'
+    size: 'default',
+    iconSize: 24
   })
   const lang = reactive({
     // 默认语言，可选值<zh-cn|en>

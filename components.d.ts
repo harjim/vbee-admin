@@ -15,6 +15,10 @@ declare module '@vue/runtime-core' {
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    IMaterialSymbolsBedtimeOutline: typeof import('~icons/material-symbols/bedtime-outline')['default']
+    IMaterialSymbolsFullscreenExitRounded: typeof import('~icons/material-symbols/fullscreen-exit-rounded')['default']
+    IMaterialSymbolsFullscreenRounded: typeof import('~icons/material-symbols/fullscreen-rounded')['default']
+    IMaterialSymbolsSunny: typeof import('~icons/material-symbols/sunny')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
