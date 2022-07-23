@@ -87,7 +87,10 @@ const viteConfig = ({ mode }: ConfigEnv): UserConfig => {
     test: {
       globals: true,
       environment: 'jsdom',
-      reporters: ['text', 'json', 'html']
+      reporters: ['text', 'json', 'html'],
+      coverage: {
+        all: true
+      }
     }
   }
 }
