@@ -1,5 +1,5 @@
 <template>
-  <el-header>
+  <el-header class="flex-horizontal-center">
     <DarkSwitch />
   </el-header>
 </template>
