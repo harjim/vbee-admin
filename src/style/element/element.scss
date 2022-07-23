@@ -1,0 +1,7 @@
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $button-padding-horizontal: ("default": 50px)
+);
+
+@use "element-plus/theme-chalk/src/dark/css-vars.scss" as *;
+@use "./light.scss" as *;
+@use "./dark.scss" as *;

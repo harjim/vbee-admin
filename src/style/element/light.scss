@@ -1,0 +1,8 @@
+html {
+  --af-bg-color: #F0F2F5;
+
+  .main-wrapper {
+    @apply h-screen w-screen overflow-hidden;
+    background-color: var(--af-bg-color);
+  }
+}

@@ -12,10 +12,10 @@ import {
 export default [
   vue(),
   AutoImport({
-    imports: ['vue', 'pinia', 'vue-router'],
+    imports: ['vue', 'pinia', 'vue-router', '@vueuse/core'],
     resolvers: [ElementPlusResolver()],
     eslintrc: {
-      enabled: false,
+      enabled: true,
       filepath: './.eslintrc-auto-import.json',
       globalsPropValue: true
     }

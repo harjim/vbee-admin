@@ -34,6 +34,14 @@ const viteConfig = ({ mode }: ConfigEnv): UserConfig => {
     }
   }
 
+  const css = {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "/@/style/element/element.scss" as *;'
+      }
+    }
+  }
+
   const build = {
     outDir: VITE_OUT_DIR,
     sourcemap: false,
@@ -74,6 +82,7 @@ const viteConfig = ({ mode }: ConfigEnv): UserConfig => {
       open: VITE_OPEN,
       proxy
     },
+    css,
     build,
     test: {
       globals: true,

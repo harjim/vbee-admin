@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="main-wrapper">
     <router-view />
   </div>
 </template>
 
-<script lang="ts" setup name="Layout">
+<script lang="ts" setup>
 </script>
 
 <style scoped>
