@@ -1,5 +1,8 @@
 import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import viteCompression from 'vite-plugin-compression'
@@ -11,11 +14,12 @@ import {
 
 export default [
   vue(),
+  vueJsx(),
   AutoImport({
     imports: ['vue', 'pinia', 'vue-router', '@vueuse/core'],
     resolvers: [ElementPlusResolver()],
     eslintrc: {
-      enabled: true,
+      enabled: false,
       filepath: './.eslintrc-auto-import.json',
       globalsPropValue: true
     }
@@ -23,7 +27,7 @@ export default [
   Components({
     dirs: ['src/components'],
     extensions: ['vue'],
-    resolvers: [ElementPlusResolver()]
+    resolvers: [ElementPlusResolver(), IconsResolver()]
   }),
   createStyleImportPlugin({
     resolves: [ElementPlusResolve()],
@@ -36,6 +40,10 @@ export default [
         }
       }
     ]
+  }),
+  Icons({
+    compiler: 'vue3',
+    autoInstall: true
   }),
   viteImagemin({
     gifsicle: {
