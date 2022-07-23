@@ -12,16 +12,22 @@ const screenWidth = document.body.clientWidth
 const width2point = (num: number) => {
   if (num < screenEnum.XS) {
     setting.value.point = sizeEnum.XS
+    setting.value.size = 'small'
   } else if (num < screenEnum.SM) {
     setting.value.point = sizeEnum.SM
+    setting.value.size = 'small'
   } else if (num < screenEnum.MD) {
     setting.value.point = sizeEnum.MD
+    setting.value.size = 'default'
   } else if (num < screenEnum.LG) {
     setting.value.point = sizeEnum.LG
+    setting.value.size = 'default'
   } else if (num < screenEnum.XL) {
     setting.value.point = sizeEnum.XL
+    setting.value.size = 'large'
   } else {
     setting.value.point = sizeEnum.XXL
+    setting.value.size = 'large'
   }
 }
 

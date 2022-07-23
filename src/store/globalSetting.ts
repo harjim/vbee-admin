@@ -4,7 +4,8 @@ import { reactive } from 'vue'
 export const useGlobalSetting = defineStore('globalSetting', () => {
   const setting = reactive({
     theme: 'dark',
-    point: ''
+    point: '',
+    size: 'default'
   })
   const lang = reactive({
     // 默认语言，可选值<zh-cn|en>

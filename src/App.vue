@@ -3,13 +3,16 @@ import AppProvider from '/@/components/Application/AppProvider.vue'
 import appStore from '/@/store'
 import { useI18n } from 'vue-i18n'
 
-const { lang } = storeToRefs(appStore.useGlobalSetting)
+const { lang, setting } = storeToRefs(appStore.useGlobalSetting)
 const { getLocaleMessage } = useI18n()
 const locale = getLocaleMessage(lang.value.defaultLang)
 </script>
 
 <template>
-  <el-config-provider :locale="locale">
+  <el-config-provider
+    :locale="locale"
+    :size="setting"
+  >
     <AppProvider>
       <router-view />
     </AppProvider>
