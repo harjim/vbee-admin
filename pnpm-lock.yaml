@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': ^17.0.3
   '@commitlint/config-conventional': ^17.0.3
+  '@element-plus/icons-vue': ^2.0.6
   '@types/node': ^18.0.6
   '@types/nprogress': ^0.2.0
   '@typescript-eslint/eslint-plugin': ^5.30.7
@@ -48,6 +49,7 @@ specifiers:
   vue-tsc: ^0.38.4
 
 dependencies:
+  '@element-plus/icons-vue': registry.npmmirror.com/@element-plus/icons-vue/2.0.6_vue@3.2.37
   '@vueuse/core': registry.npmmirror.com/@vueuse/core/8.9.4_vue@3.2.37
   axios: registry.npmmirror.com/axios/0.27.2
   dayjs: registry.npmmirror.com/dayjs/1.11.4

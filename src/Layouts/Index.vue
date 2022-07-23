@@ -1,11 +1,14 @@
 <template>
   <div class="main-wrapper">
-    <router-view />
+    <el-container direction="vertical">
+      <Header />
+      <router-view />
+    </el-container>
   </div>
 </template>
 
 <script lang="ts" setup>
-</script>
+import Header from '/@/Layouts/components/Header.vue'</script>
 
 <style scoped>
 
